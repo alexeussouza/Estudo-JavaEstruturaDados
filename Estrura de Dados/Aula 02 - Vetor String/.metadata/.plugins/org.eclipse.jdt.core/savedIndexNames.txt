@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+INDEX VERSION 1.131+C:\Users\alexandre\Documents\GitHub\Estudo---Java\Estrura de Dados\Aula 02 - Vetor String\.metadata\.plugins\org.eclipse.jdt.core
+=======
+INDEX VERSION 1.131+C:\Users\Alexandre\Documents\GitHub\Estudo - Java\Estrura de Dados\Aula 02 - Vetor String\.metadata\.plugins\org.eclipse.jdt.core
+1896996747.index
+>>>>>>> 637f7432803f73b6899cc9f6257c748d8a7477a2
+1865797976.index
+1896996747.index
