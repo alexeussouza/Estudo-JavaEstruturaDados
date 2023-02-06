@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\alexeus\Desktop\Lista Ligada\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1200168112.index
+3413270776.index

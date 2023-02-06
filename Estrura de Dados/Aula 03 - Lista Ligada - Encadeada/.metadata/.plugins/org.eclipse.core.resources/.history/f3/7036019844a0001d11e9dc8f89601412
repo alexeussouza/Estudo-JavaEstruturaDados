@@ -1,0 +1,101 @@
+package app;
+
+public class ListaLigada {
+	private Elemento primeiro;
+	private Elemento ultimo;
+	private int tamanho;
+	
+	public ListaLigada() {
+		tamanho = 0;
+	}
+	
+	public Elemento getPrimeiro() {
+		return primeiro;
+	}
+	
+	public void setPrimeiro(Elemento primeiro) {
+		this.primeiro = primeiro;
+	}
+	
+	public Elemento getUltimo() {
+		return ultimo;
+	}
+	
+	public void setUltimo(Elemento ultimo) {
+		this.ultimo = ultimo;
+	}
+	
+	public int getTamanho() {
+		return tamanho;
+	}
+	
+	public void setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
+	
+	public void adicionar(String valor) {
+		
+		Elemento novoValor = new Elemento(valor);
+		
+		if(primeiro == null && ultimo == null) {
+			primeiro = novoValor;
+			ultimo = novoValor;
+		}else {
+			ultimo.setProximo(novoValor);
+			ultimo = novoValor;
+		}
+		tamanho++;
+	}
+	
+	public void removerValor(String valor) {
+		
+		
+		Elemento atual = primeiro;
+		Elemento anterior = null;
+		
+		for (int i = 0; i < tamanho; i++) {
+			
+			if(atual.getValor().equalsIgnoreCase(valor)) {
+				if(atual == primeiro && atual == ultimo) {
+					primeiro = null;
+					ultimo = null;
+					
+				}else if(atual == primeiro) {
+					primeiro = null;
+					atual.setProximo(null);
+					System.out.println("entrou no if");
+					break;
+					
+				}else if(atual == ultimo) {
+					ultimo = anterior;
+					ultimo.setProximo(null);
+					
+					
+				}else {
+					
+					anterior.setProximo(atual.getProximo());
+					atual = null;
+					break;
+				}
+			}
+			tamanho--;
+			anterior = atual;
+			atual = atual.getProximo();
+		}
+		
+	}
+	
+	public Elemento obterPosicao(int posicao) {
+		
+		Elemento atual = primeiro;
+		
+		for (int i = 0; i < posicao; i++) {
+			if(atual.getProximo() != null) {
+				atual = atual.getProximo();
+			}
+		}
+		
+		return atual;
+	}
+	
+}
