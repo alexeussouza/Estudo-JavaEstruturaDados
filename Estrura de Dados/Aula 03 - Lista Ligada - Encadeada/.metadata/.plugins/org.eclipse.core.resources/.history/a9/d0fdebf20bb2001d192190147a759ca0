@@ -1,0 +1,29 @@
+package app;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		ListaLigada lista = new ListaLigada();
+		
+		lista.adicionarValor("AC");
+		lista.adicionarValor("BA");
+		lista.adicionarValor("CE");
+		lista.adicionarValor("DF");
+		
+		lista.posicaoValor(0);
+		lista.posicaoValor(1);
+		lista.posicaoValor(2);
+		lista.posicaoValor(3);
+		
+		lista.getTamanho();
+		
+		System.out.println("Primeiro: " + lista.getPrimeiro().getValor());
+		System.out.println("Ultimo: " + lista.getUltimo().getValor());
+		System.out.println("Tamanho: " + lista.getTamanho());
+
+	}
+
+}

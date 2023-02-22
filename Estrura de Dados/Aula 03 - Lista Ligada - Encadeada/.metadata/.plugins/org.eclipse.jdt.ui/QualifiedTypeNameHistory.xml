@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="app.ListaLigada"/>
+    <fullyQualifiedTypeName name="app.Elemento"/>
+    <fullyQualifiedTypeName name="javax.swing.text.TabableView"/>
 </qualifiedTypeNameHistroy>
