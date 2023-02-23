@@ -21,12 +21,19 @@ public class Main_Cliente {
 		System.out.println("Ultimo: " + cliente.getUltimo().getValor());
 		System.out.println("Tamanho: " + cliente.getTamanho());
 		
-		  cliente.removerElemento(new Cliente( 123));
-		//cliente.removerElemento(new Cliente(124));
-		// cliente.removerElemento(new Cliente(125));
-		 //cliente.removerElemento(new Cliente(126));
 		
-		System.out.println("\nPrimeiro: " + cliente.getPrimeiro().getValor());
+		System.out.println("\nFunção Remover Executada!");
+		cliente.removerElemento((Cliente) cliente.procurarElemento(0).getValor());
+		cliente.removerElemento((Cliente) cliente.procurarElemento(1).getValor());
+		cliente.removerElemento((Cliente) cliente.procurarElemento(2).getValor());
+		cliente.removerElemento((Cliente) cliente.procurarElemento(3).getValor());
+		
+		System.out.println("Lista Ligada\n");
+		for (int i = 0; i < cliente.getTamanho(); i++) {
+			System.out.println(cliente.procurarElemento(i).getValor());
+		}
+		
+		System.out.println("Primeiro: " + cliente.getPrimeiro().getValor());
 		System.out.println("Ultimo: " + cliente.getUltimo().getValor());
 		System.out.println("Tamanho: " + cliente.getTamanho());
 	}

@@ -49,8 +49,8 @@ public void adicionarElemento(TIPO valor) {
 	
 	public void removerElemento(TIPO valor) {
 		
-		Elemento atual = primeiro; // atual recebe valor do primeiro
-		Elemento anterior = null;
+		Elemento<TIPO> atual = primeiro; // atual recebe valor do primeiro
+		Elemento<TIPO> anterior = null;
 		if(atual.getValor().equals(valor)) {
 			for (int i = 0; i < getTamanho(); i++) { //Varre toda a lista procurando o valor
 				if(primeiro == null && ultimo == null) {
@@ -79,9 +79,9 @@ public void adicionarElemento(TIPO valor) {
 		}
 	}
 	
-	public Elemento procurarElemento(int posicao) {
+	public Elemento<TIPO> procurarElemento(int posicao) {
 		
-		Elemento atual = primeiro; // atual recebe valor do primeiro
+		Elemento<TIPO> atual = primeiro; // atual recebe valor do primeiro
 		
 		for (int i = 0; i < posicao; i++) { //Varre a lista até a posição informada
 			if(atual.getProximo() != null)

@@ -20,14 +20,15 @@ ListaGenerica<Integer> lista = new ListaGenerica<Integer>();
 		
 		System.out.println("\nPrimeiro: " + lista.getPrimeiro().getValor());
 		System.out.println("Ultimo: " + lista.getUltimo().getValor());
-		System.out.println("\nTamanho: " + lista.getTamanho());
+		System.out.println("Tamanho: " + lista.getTamanho());
 		
 		lista.removerElemento(2);
 		lista.removerElemento(4);
 		lista.removerElemento(6);
 		lista.removerElemento(8);
 		lista.removerElemento(10);
-		System.out.println("\nTamanho: " + lista.getTamanho());
+		System.out.println("\nFunção remover executada!");
+		System.out.println("Tamanho: " + lista.getTamanho());
 
 	}
 }
