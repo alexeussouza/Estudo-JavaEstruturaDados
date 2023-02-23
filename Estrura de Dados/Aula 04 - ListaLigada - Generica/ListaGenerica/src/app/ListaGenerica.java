@@ -6,7 +6,7 @@ public class ListaGenerica<TIPO> { // lista generica, equivalente a lista Linked
 	private int tamanho;
 	
 	public ListaGenerica(){
-		tamanho = 0;
+		this.tamanho = 0;
 	}
 
 	public Elemento<TIPO> getPrimeiro() {
@@ -44,7 +44,7 @@ public void adicionarElemento(TIPO valor) {
 			ultimo.setProximo(novoElemento);
 			ultimo = novoElemento;
 		}
-		tamanho++;
+		this.tamanho++;
 	}
 	
 	public void removerElemento(TIPO valor) {
@@ -52,7 +52,7 @@ public void adicionarElemento(TIPO valor) {
 		Elemento<TIPO> atual = primeiro; // atual recebe valor do primeiro
 		Elemento<TIPO> anterior = null;
 		if(atual.getValor().equals(valor)) {
-			for (int i = 0; i < getTamanho(); i++) { //Varre toda a lista procurando o valor
+			for (int i = 0; i < this.tamanho; i++) { //Varre toda a lista procurando o valor
 				if(primeiro == null && ultimo == null) {
 					primeiro = null;
 					ultimo = null;
@@ -71,7 +71,7 @@ public void adicionarElemento(TIPO valor) {
 					atual = null;
 				}
 				
-				tamanho--;
+				this.tamanho--;
 				break;
 			}
 			anterior = atual;
