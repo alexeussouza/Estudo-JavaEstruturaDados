@@ -1,31 +1,33 @@
 package app;
 
 public class Cliente {
-	private String cpf;
-    private String nome;
-    
-    public Cliente(String i, String novoNome){
-        this.cpf = i;
-        this.nome = novoNome;
-    }
+	private int cpf;
+	private String nome;
 
-    public String getCpf() {
-        return cpf;
-    }
+	public int getCpf() {
+		return cpf;
+	}
+	
+	public void setCpf(int cpf) {
+		this.cpf = cpf;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String toString() { // para toString ele retorna nome
+		return this.nome; 
+	}
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    
-    public String toString(){
-        return this.nome;
-    }
+	public Cliente(int cpf, String nome) {
+		
+		this.cpf = cpf;
+		this.nome = nome;
+	}
+	
 }

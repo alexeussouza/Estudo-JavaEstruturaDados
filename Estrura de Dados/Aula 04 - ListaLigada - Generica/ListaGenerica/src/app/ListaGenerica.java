@@ -37,36 +37,37 @@ public void adicionarElemento(TIPO valor) {
 		
 		Elemento<TIPO> novoElemento = new Elemento<TIPO>(valor);
 		
-		if(this.primeiro == null && this.ultimo == null) {
-			this.primeiro = novoElemento;
-			this.ultimo = novoElemento;
+		if(primeiro == null && ultimo == null) {
+			primeiro = novoElemento;
+			ultimo = novoElemento;
 		}else {
-			this.ultimo.setProximo(novoElemento);
-			this.ultimo = novoElemento;
+			ultimo.setProximo(novoElemento);
+			ultimo = novoElemento;
 		}
 		this.tamanho++;
 	}
 	
-	public void removerElemento(TIPO valorProcurado) {
+	public void removerElemento(TIPO valor) {
 		
-		Elemento<TIPO> atual = this.primeiro; // atual recebe valor do primeiro
+		Elemento<TIPO> atual = primeiro; // atual recebe valor do primeiro
 		Elemento<TIPO> anterior = null;
-		if(atual.getValor().equals(valorProcurado)) {
-			for (int i = 0; i < this.getTamanho(); i++) { //Varre toda a lista procurando o valor
-				if(this.tamanho == 1) {
-					this.primeiro = null;
-					this.ultimo = null;
+		if(atual.getValor().equals(valor)) {
+			for (int i = 0; i < this.tamanho; i++) { //Varre toda a lista procurando o valor
+				if(primeiro == null && ultimo == null) {
+					primeiro = null;
+					ultimo = null;
 					
-				}else if(atual == this.primeiro) {
-					 this.primeiro = atual.getProximo();
+				}else if(atual == primeiro) {
+					 primeiro = atual.getProximo();
 					 atual.setProximo(null); // setproximo do primeiro sempre será null
 					
-				}else if(atual == this.ultimo) {
-					this.ultimo = anterior;
+				}else if(atual == ultimo) {
+					ultimo = anterior;
 					anterior.setProximo(null); //anterior do ultimo sempre sera null
 				}else {
 					
 					anterior.setProximo(atual.getProximo());
+					anterior = atual.getProximo();
 					atual = null;
 				}
 				
@@ -78,9 +79,9 @@ public void adicionarElemento(TIPO valor) {
 		}
 	}
 	
-	public Elemento procurarElemento(int posicao) {
+	public Elemento<TIPO> procurarElemento(int posicao) {
 		
-		Elemento atual = this.primeiro; // atual recebe valor do primeiro
+		Elemento<TIPO> atual = primeiro; // atual recebe valor do primeiro
 		
 		for (int i = 0; i < posicao; i++) { //Varre a lista até a posição informada
 			if(atual.getProximo() != null)
