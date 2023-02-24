@@ -6,7 +6,7 @@ public class ListaGenerica<TIPO> { // lista generica, equivalente a lista Linked
 	private int tamanho;
 	
 	public ListaGenerica(){
-		tamanho = 0;
+		this.tamanho = 0;
 	}
 
 	public Elemento<TIPO> getPrimeiro() {
@@ -37,41 +37,40 @@ public void adicionarElemento(TIPO valor) {
 		
 		Elemento<TIPO> novoElemento = new Elemento<TIPO>(valor);
 		
-		if(primeiro == null && ultimo == null) {
-			primeiro = novoElemento;
-			ultimo = novoElemento;
+		if(this.primeiro == null && this.ultimo == null) {
+			this.primeiro = novoElemento;
+			this.ultimo = novoElemento;
 		}else {
-			ultimo.setProximo(novoElemento);
-			ultimo = novoElemento;
+			this.ultimo.setProximo(novoElemento);
+			this.ultimo = novoElemento;
 		}
-		tamanho++;
+		this.tamanho++;
 	}
 	
-	public void removerElemento(TIPO valor) {
+	public void removerElemento(TIPO valorProcurado) {
 		
-		Elemento<TIPO> atual = primeiro; // atual recebe valor do primeiro
+		Elemento<TIPO> atual = this.primeiro; // atual recebe valor do primeiro
 		Elemento<TIPO> anterior = null;
-		if(atual.getValor().equals(valor)) {
-			for (int i = 0; i < getTamanho(); i++) { //Varre toda a lista procurando o valor
-				if(primeiro == null && ultimo == null) {
-					primeiro = null;
-					ultimo = null;
+		if(atual.getValor().equals(valorProcurado)) {
+			for (int i = 0; i < this.getTamanho(); i++) { //Varre toda a lista procurando o valor
+				if(this.tamanho == 1) {
+					this.primeiro = null;
+					this.ultimo = null;
 					
-				}else if(atual == primeiro) {
-					 primeiro = atual.getProximo();
+				}else if(atual == this.primeiro) {
+					 this.primeiro = atual.getProximo();
 					 atual.setProximo(null); // setproximo do primeiro sempre será null
 					
-				}else if(atual == ultimo) {
-					ultimo = anterior;
+				}else if(atual == this.ultimo) {
+					this.ultimo = anterior;
 					anterior.setProximo(null); //anterior do ultimo sempre sera null
 				}else {
 					
 					anterior.setProximo(atual.getProximo());
-					anterior = atual.getProximo();
 					atual = null;
 				}
 				
-				tamanho--;
+				this.tamanho--;
 				break;
 			}
 			anterior = atual;
@@ -79,9 +78,9 @@ public void adicionarElemento(TIPO valor) {
 		}
 	}
 	
-	public Elemento<TIPO> procurarElemento(int posicao) {
+	public Elemento procurarElemento(int posicao) {
 		
-		Elemento<TIPO> atual = primeiro; // atual recebe valor do primeiro
+		Elemento atual = this.primeiro; // atual recebe valor do primeiro
 		
 		for (int i = 0; i < posicao; i++) { //Varre a lista até a posição informada
 			if(atual.getProximo() != null)

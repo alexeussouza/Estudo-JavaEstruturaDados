@@ -7,10 +7,10 @@ public class Main_Cliente {
 		
 		ListaGenerica<Cliente> cliente = new ListaGenerica<Cliente>();
 		
-		cliente.adicionarElemento(new Cliente(123, "alexandre"));
-		cliente.adicionarElemento(new Cliente(124, "maria"));
-		cliente.adicionarElemento(new Cliente(125, "jose"));
-		cliente.adicionarElemento(new Cliente(126, "marcos"));
+		cliente.adicionarElemento(new Cliente("1234", "alexandre"));
+		cliente.adicionarElemento(new Cliente("1233", "maria"));
+		cliente.adicionarElemento(new Cliente("1122", "jose"));
+		cliente.adicionarElemento(new Cliente("2233", "marcos"));
 		
 		System.out.println("Lista Ligada\n");
 		for (int i = 0; i < cliente.getTamanho(); i++) {
