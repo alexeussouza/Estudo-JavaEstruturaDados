@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Alexeus
+ *
+ */
+module BuscaBinaria {
+}
